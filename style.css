@@ -1,0 +1,29 @@
+html {
+  background: url('./bragle.jpg'), linear-gradient(to top right, blue, red);
+  background-size: cover;
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  text-align: center;
+  border-radius: 1em;
+  box-shadow: 5px 5px 5px black;
+  background: black;
+  color: white;
+  padding: 1em;
+}
+
+a {
+  color: skyblue
+}
+
+title {
+  display: block;
+  font-weight: bold;
+  font-size: xx-large;
+}

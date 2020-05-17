@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bragle</title>
+    <style>
+      html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        line-height: 2.2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>b</h1>
+      <h1>r</h1>
+      <h1>a</h1>
+      <h1>g</h1>
+      <h1>l</h1>
+      <h1>e</h1>
+    </main>
+    <audio src="https://invidio.us/latest_version?id=sd4bqmP_460&itag=251" autoplay></audio>
+
+    <script>
+      function getOffset(el) {
+        var _x = 0;
+        var _y = 0;
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+          _x += el.offsetLeft - el.scrollLeft;
+          _y += el.offsetTop - el.scrollTop;
+          el = el.offsetParent;
+        }
+        return { top: _y, left: _x };
+      }
+      /**
+      *
+      * @param {PointerEvent} event
+      *
+       */
+      function fly({ target: img }) {
+        img.removeEventListener('click', fly)
+        img.animate([{
+          left: img.offsetLeft + 'px'
+        }, {
+          left: img.offsetLeft + 100 + 'px'
+        }], {
+          duration: 1000,
+          fill: 'forwards',
+          easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        })
+      }
+      document.querySelectorAll('h1').forEach(ele => {
+        const img = document.createElement('img')
+        img.src = './bragle.jpg'
+        img.addEventListener('click', fly)
+        img.addEventListener('click', () => ele.dataset.on = true)
+        img.width = 50
+        img.style.position = 'absolute'
+        img.style.top = getOffset(ele).top + 'px'
+        document.body.appendChild(img)
+      })
+      document.querySelector('main').addEventListener('click', () => {
+        if ([...document.getElementsByTagName('h1')].every(ele => ele.dataset.on === "true")) {
+          location.href = './level1.html'
+        }
+      })
+    </script>
+  </body>
+
+</html>
