@@ -10,10 +10,10 @@
   <body>
     <title>JavaScript is disabled</title>
     <script>
-      if (!localStorage.getItem('time')) localStorage.setItem('time', Date.now())
-      if (!localStorage.getItem('record')) localStorage.setItem('record', Date.now())
-      const record = localStorage.getItem('record')
-      document.title = `you completed bragle in ${((record - localStorage.time) / 1000).toFixed(2)} seconds`
+      if (!sessionStorage.getItem('time')) sessionStorage.setItem('time', Date.now())
+      if (!sessionStorage.getItem('record')) sessionStorage.setItem('record', Date.now())
+      const record = sessionStorage.getItem('record')
+      document.title = `you completed bragle in ${((record - sessionStorage.time) / 1000).toFixed(2)} seconds`
     </script>
     <h2>you are now funny</h2>
     <a href="./index.html">try again</a>
